@@ -1,18 +1,19 @@
 package Assignment7.PartThree;
 
-interface IOne {
+interface InterfaceOne {
     public void method1();
     public void method2();
 }
-interface ITwo {
+interface InterfaceTwo {
     public void method3();
     public void method4();
 }
-interface IThree {
+interface InterfaceThree {
     public void method5();
     public void method6();
+
 }
-interface IFour extends IOne, ITwo, IThree {
+interface InterfaceFour extends InterfaceOne, InterfaceTwo, InterfaceThree {
     public void method7();
 }
 class ConcreteClass {
@@ -20,7 +21,7 @@ class ConcreteClass {
         System.out.println("inside the  baseClass method");
     }
 }
-class Derive extends ConcreteClass implements IFour {
+class Derive extends ConcreteClass implements InterfaceFour {
 
     @Override
     public void method1() {
@@ -61,16 +62,16 @@ class Derive extends ConcreteClass implements IFour {
 }
 
 public class PartThree {
-    void m1(IOne one){
+    void m1(InterfaceOne one){
         one.method1();
     }
-    void m2(IOne one){
+    void m2(InterfaceOne one){
         one.method2();
     }
-    void m3(IFour four){
+    void m3(InterfaceFour four){
         four.method5();
     }
-    void m4(IThree three){
+    void m4(InterfaceThree three){
         three.method5();
     }
     public static void main(String[] args){

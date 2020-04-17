@@ -1,9 +1,7 @@
 package Assignment4;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
 import java.text.SimpleDateFormat;
+
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -28,9 +26,9 @@ class DateRange{
     private SimpleDateFormat simpleDateFormat;
     private Date signUpDate;
     private Date currentDate;
-    private String kycFormattedStartDate;
-    private String kycFormattedEndDate;
-    private String currentDateFormatted;
+    private String KycStartDate;
+    private String KycEndDate;
+    private String formattedCurrentDate;
 
 
 
@@ -52,14 +50,14 @@ class DateRange{
         Date kycStartDate = addDays(signUpDate, -30);
         Date kycEndDate = addDays(signUpDate, +30);
 
-        kycFormattedStartDate = simpleDateFormat.format(kycStartDate);
-        kycFormattedEndDate = simpleDateFormat.format(kycEndDate);
-        currentDateFormatted = simpleDateFormat.format(currentDate);
+        KycStartDate = simpleDateFormat.format(kycStartDate);
+        KycEndDate = simpleDateFormat.format(kycEndDate);
+        formattedCurrentDate = simpleDateFormat.format(currentDate);
 
         if (currentDate.after(kycStartDate) && currentDate.before(kycEndDate))
-            return kycFormattedStartDate + " " + currentDateFormatted;
+            return KycStartDate + " " + formattedCurrentDate;
         else
-            return kycFormattedStartDate + " " + kycFormattedEndDate;
+            return KycStartDate + " " + KycEndDate;
     }
     public Date addDays(Date date, int days) {
         Calendar calendar = new GregorianCalendar();
